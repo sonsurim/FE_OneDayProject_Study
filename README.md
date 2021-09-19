@@ -50,4 +50,4 @@
 main/유저명 < develop/유저명  (선택사항 : < develop/유저명/#이슈번호/내용 )
 
 ### ESLINT 및 PRETTIER 설정
-
+  - main branch에 첨부된 설정파일을 사용하여 eslint 및 prettier를 적용합니다.
