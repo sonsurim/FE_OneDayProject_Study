@@ -19,6 +19,4 @@ export default function CommonToggler(target) {
   }
 
   this.init()
-
-  // document.querySelector('.nav__toggler-r')
 }
