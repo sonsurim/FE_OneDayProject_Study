@@ -14,7 +14,7 @@ export default function Nav({ target, initialState }) {
     const prevItem = document.querySelector('.active')
     const currentItem = document.querySelector(
       `[data-item="${currentPage}"]`,
-    ).parentNode
+    )?.parentNode
 
     removeClass(prevItem, 'active')
     addClass(currentItem, 'active')
@@ -22,9 +22,9 @@ export default function Nav({ target, initialState }) {
 
   this.render = () => {
     const { currentPage } = this.state
-    const isInitialize = document.querySelector('.nav__list')
+    const isInitialize = !document.querySelector('.nav__list')
 
-    if (isInitialize) {
+    if (!isInitialize) {
       markCurrentItem(currentPage)
       return
     }
