@@ -1,3 +1,1 @@
-export default function makeDataFrame(text) {
-  return 0
-}
+export default function makeDataFrame(text) {}
