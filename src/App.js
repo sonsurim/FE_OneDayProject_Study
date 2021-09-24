@@ -1,6 +1,6 @@
 import Header from './components/Header.js'
 import Nav from './components/Nav.js'
-import Content from './components/Content.js'
+import Content from './components/content/Content.js'
 
 export default function App(target) {
   const headerElement = createElement('header')
@@ -17,7 +17,7 @@ export default function App(target) {
     content.setState(nextState)
   }
 
-  new Header({ target: headerElement, initialState: this.state })
+  new Header(headerElement)
   const nav = new Nav({ target: navElement, initialState: this.state })
   const content = new Content({ target: mainElement, initialState: this.state })
 

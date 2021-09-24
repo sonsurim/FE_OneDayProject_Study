@@ -1,6 +1,6 @@
 import CommonButtonToggler from './common/CommonButtonToggler.js'
 
-export default function Header({ target, initialState }) {
+export default function Header(target) {
   const logo = createElement('a', '.header__logo')
   logo.textContent = '25 JS Project'
 
