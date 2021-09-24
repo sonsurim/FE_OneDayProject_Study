@@ -1,0 +1,29 @@
+.informationForm {
+  text-align: center;
+  height: 200px;
+}
+
+.peopleInfoBlock {
+  float: right;
+  text-align: center;
+  height: 150px;
+  width: 200px;
+  font-size: 0.8em;
+  word-break: break-word;
+}
+
+.inputText {
+  text-align: left;
+  vertical-align: middle;
+  height: 120px;
+  width: 200px;
+  font-size: 0.8em;
+  word-break: break-word;
+}
+
+.submitbutton {
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  font-size: 0.8em;
+}
