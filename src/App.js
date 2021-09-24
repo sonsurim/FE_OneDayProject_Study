@@ -1,6 +1,6 @@
-import Header from './components/header.js'
-import Nav from './components/nav.js'
-import Content from './components/content.js'
+import Header from './components/Header.js'
+import Nav from './components/Nav.js'
+import Content from './components/Content.js'
 
 export default function App(target) {
   const headerElement = createElement('header')
