@@ -7,10 +7,9 @@ function $($element) {
 }
 
 function createDom(template) {
-  // const template = '<div>돔파서 테스트</div>';
-
   const domParser = new DOMParser()
   const doc = domParser.parseFromString(template, 'text/html')
+  console.log(doc)
   const childNode = Array.from(doc.body.childNodes)
   const fragment = document.createDocumentFragment()
 
