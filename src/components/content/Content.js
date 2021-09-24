@@ -4,8 +4,17 @@ export default function Content({ target, initialState }) {
   this.state = initialState
   this.setState = (nextState) => {
     this.state = nextState
-    console.log(nextState)
+    this.render()
   }
 
-  new Home(target)
+  this.render = () => {
+    const { currentPage } = this.state
+
+    switch (currentPage) {
+      case 'Colors':
+        break
+      default:
+        new Home(target)
+    }
+  }
 }
