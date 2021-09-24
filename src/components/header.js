@@ -1,3 +1,4 @@
+import { push } from '../routes/router.js'
 import CommonButtonToggler from './common/CommonButtonToggler.js'
 
 export default function Header(target) {
@@ -9,5 +10,13 @@ export default function Header(target) {
     new CommonButtonToggler(target)
   }
 
-  this.render()
+  this.init = () => {
+    this.render()
+
+    logo.addEventListener('click', (e) => {
+      push('Home')
+    })
+  }
+
+  this.init()
 }

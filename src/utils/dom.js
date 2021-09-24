@@ -9,7 +9,6 @@ function $($element) {
 function createDom(template) {
   const domParser = new DOMParser()
   const doc = domParser.parseFromString(template, 'text/html')
-  console.log(doc)
   const childNode = Array.from(doc.body.childNodes)
   const fragment = document.createDocumentFragment()
 

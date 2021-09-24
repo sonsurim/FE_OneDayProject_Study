@@ -1,10 +1,23 @@
+import CommonContentColumn from '../components/common/CommonContentColumn.js'
+
 export default function Home(target) {
   const article = createElement('article', '.content')
 
-  this.render = () => {
-    target.innerHTML = ''
+  const contentList = [
+    'colors',
+    'hex-colors',
+    'quote',
+    'carousel',
+    'counter',
+    'digital-clock',
+    'message',
+  ]
 
-    article.innerHTML = 'HomePage'
+  this.render = () => {
+    contentList.forEach((content) => {
+      new CommonContentColumn({ target: article, content })
+    })
+
     target.appendChild(article)
   }
 

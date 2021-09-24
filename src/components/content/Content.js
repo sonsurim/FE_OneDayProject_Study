@@ -8,10 +8,12 @@ export default function Content({ target, initialState }) {
   }
 
   this.render = () => {
+    target.innerHTML = ''
+
     const { currentPage } = this.state
 
     switch (currentPage) {
-      case 'Colors':
+      case 'colors':
         break
       default:
         new Home(target)
