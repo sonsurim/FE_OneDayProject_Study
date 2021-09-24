@@ -19,7 +19,7 @@ export default function PeopleInfo({ target, initialState, onSubmit }) {
   infoFormat.addEventListener('click', (e) => {
     const target = e.target.closest('button')
     if (target) {
-      const textareaElement = e.target.parentNode.childNodes[1]
+      const textareaElement = e.target.parentNode.querySelector('.inputText')
       const text = textareaElement.value
       onSubmit(text)
     }
