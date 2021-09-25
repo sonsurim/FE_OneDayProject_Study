@@ -1,4 +1,6 @@
 import { push } from '../../routes/router.js'
+
+import Colors from '../../views/Colors.js'
 import Home from '../../views/Home.js'
 
 export default function Content({ target, initialState }) {
@@ -15,6 +17,7 @@ export default function Content({ target, initialState }) {
 
     switch (currentPage) {
       case 'colors':
+        new Colors(target)
         break
       case 'hex-colors':
         break

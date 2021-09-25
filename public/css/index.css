@@ -1,3 +1,5 @@
+/* views*/
+@import url(/public/css/views/colors.css);
 /* Common */
 * {
   box-sizing: border-box;
@@ -156,7 +158,12 @@ li {
 .content-wrapper {
   display: flex;
   justify-content: center;
-  margin: 158px 0 58px 0;
+}
+.content-wrapper .container {
+  width: 100%;
+  height: calc(100vh - 128px);
+  margin-top: 128px;
+  overflow: hidden;
 }
 
 .content {
@@ -164,6 +171,7 @@ li {
   grid-template-rows: repeat(2, 400px);
   grid-template-columns: repeat(2, 680px);
   grid-gap: 40px;
+  margin: 158px 0 58px 0;
 }
 .content__column {
   cursor: pointer;
@@ -230,4 +238,4 @@ li {
   display: flex;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */

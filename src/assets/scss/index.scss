@@ -3,6 +3,9 @@
 $content-list:   'colors', 'hex-colors', 'quote', 'carousel', 'counter', 'digital-clock', 'message';
 $base-img-url: '/src/assets/images/';
 
+/* views*/
+@import url(/public/css/views/colors.css);
+
 /* Common */
 * {
   box-sizing: border-box;
@@ -179,7 +182,13 @@ li {
 .content-wrapper {
   display: flex;
   justify-content: center;
-  margin: 158px 0 58px 0;
+
+  .container {
+    width: 100%;
+    height: calc(100vh - 128px);
+    margin-top: 128px;
+    overflow: hidden;
+  }
 }
 
 .content {
@@ -187,6 +196,7 @@ li {
   grid-template-rows: repeat(2, 400px);
   grid-template-columns: repeat(2, 680px);
   grid-gap: 40px;
+  margin: 158px 0 58px 0;
 
   &__column {
     cursor: pointer;
