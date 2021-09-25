@@ -1,13 +1,10 @@
 import { initRouter } from './routes/router.js'
 
-import Header from './components/Header.js'
-import Nav from './components/Nav.js'
+import Header from './components/header/Header.js'
 import Content from './components/content/Content.js'
 
 export default function App(target) {
-  const maskElement = createElement('div', '.mask', '.hide')
   const headerElement = createElement('header', '.header')
-  const navElement = createElement('nav', '.nav')
   const mainElement = createElement('main', '.content-wrapper')
 
   this.state = {
@@ -17,17 +14,8 @@ export default function App(target) {
   this.setState = (nextState) => {
     this.state = nextState
 
-    nav.setState(nextState)
+    header.setState(nextState)
     content.setState(nextState)
-  }
-
-  const goHome = () => {
-    const nextState = {
-      currentPage: 'Home',
-    }
-
-    this.setState(nextState)
-    history.replaceState(null, null, '/content/Home')
   }
 
   this.route = () => {
@@ -50,13 +38,19 @@ export default function App(target) {
     goHome()
   }
 
-  new Header(headerElement)
-  const nav = new Nav({ target: navElement, initialState: this.state })
+  const header = new Header({ target: headerElement, initialState: this.state })
   const content = new Content({ target: mainElement, initialState: this.state })
 
-  target.appendChild(maskElement)
+  const goHome = () => {
+    const nextState = {
+      currentPage: 'Home',
+    }
+
+    this.setState(nextState)
+    history.replaceState(null, null, '/content/Home')
+  }
+
   target.appendChild(headerElement)
-  target.appendChild(navElement)
   target.appendChild(mainElement)
 
   this.route()
@@ -64,5 +58,17 @@ export default function App(target) {
 
   window.addEventListener('popstate', (e) => {
     this.route()
+  })
+
+  window.addEventListener('scroll', (e) => {
+    const isScrolled = document.querySelector('.is-scrolled')
+
+    if (window.scrollY && isScrolled) {
+      return
+    }
+
+    window.scrollY
+      ? addClass(headerElement, 'is-scrolled')
+      : removeClass(headerElement, 'is-scrolled')
   })
 }

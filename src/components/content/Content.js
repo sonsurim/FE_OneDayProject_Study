@@ -15,6 +15,18 @@ export default function Content({ target, initialState }) {
     switch (currentPage) {
       case 'colors':
         break
+      case 'hex-colors':
+        break
+      case 'quote':
+        break
+      case 'carousel':
+        break
+      case 'counter':
+        break
+      case 'digital-clock':
+        break
+      case 'message':
+        break
       default:
         new Home(target)
     }

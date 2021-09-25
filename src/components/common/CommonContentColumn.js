@@ -1,5 +1,4 @@
 import { push } from '../../routes/router.js'
-import { BASE_IMG_URL } from '../../data/data.js'
 
 export default function CommonContentColumn({ target, content }) {
   const contentColumn = createElement('div', '.content__column')
