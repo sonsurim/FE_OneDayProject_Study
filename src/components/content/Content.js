@@ -1,3 +1,4 @@
+import { push } from '../../routes/router.js'
 import Home from '../../views/Home.js'
 
 export default function Content({ target, initialState }) {
@@ -28,7 +29,12 @@ export default function Content({ target, initialState }) {
       case 'message':
         break
       default:
-        new Home(target)
+        new Home({
+          target,
+          onClick(column) {
+            push(column)
+          },
+        })
     }
   }
 }
