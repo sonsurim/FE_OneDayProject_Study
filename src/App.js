@@ -5,9 +5,10 @@ import Nav from './components/Nav.js'
 import Content from './components/content/Content.js'
 
 export default function App(target) {
-  const headerElement = createElement('header')
-  const navElement = createElement('nav')
-  const mainElement = createElement('main')
+  const maskElement = createElement('div', '.mask', '.hide')
+  const headerElement = createElement('header', '.header')
+  const navElement = createElement('nav', '.nav')
+  const mainElement = createElement('main', '.content-wrapper')
 
   this.state = {
     currentPage: 'Home',
@@ -53,10 +54,15 @@ export default function App(target) {
   const nav = new Nav({ target: navElement, initialState: this.state })
   const content = new Content({ target: mainElement, initialState: this.state })
 
+  target.appendChild(maskElement)
   target.appendChild(headerElement)
   target.appendChild(navElement)
   target.appendChild(mainElement)
 
   this.route()
   initRouter(this.route)
+
+  window.addEventListener('popstate', (e) => {
+    this.route()
+  })
 }

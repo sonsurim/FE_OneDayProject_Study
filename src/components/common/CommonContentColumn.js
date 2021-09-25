@@ -6,7 +6,12 @@ export default function CommonContentColumn({ target, content }) {
   contentColumn.setAttribute('data-column', content)
 
   this.render = () => {
-    const columnTemplate = `<img class="column__img" src="${BASE_IMG_URL}/${content}.png">
+    const columnTemplate = `<div class="column__img-wrapper">
+                              <div class="column__mask">
+                                <span>Go to ${content}</span>
+                              </div>
+                              <div class="column__img column__img-${content}">
+                            </div>
                             <div class="column__title-wrapper">
                               <h3 class="column__tile">${content}</h3>
                             </div>`

@@ -1,7 +1,7 @@
 export default function CommonToggler(target) {
-  const togglerBtn = createElement('button', '.nav__toggler', '.nav__toggler-r')
-  const btnTemplate = `<a><div class="nav__toggler-wrapper">
-                            <div class="nav__toggler-inner"></div>
+  const togglerBtn = createElement('button', '.header__toggler')
+  const btnTemplate = `<a><div class="header__toggler-wrapper">
+                            <div class="header__toggler-inner"></div>
                         </div></a>`
   const btnChildNodes = createDom(btnTemplate)
 
